@@ -5,6 +5,8 @@ class DairyType < ApplicationRecord
 
   # Validations
 
+  validates :dairy_type, :inclusion => { :in => [ "2%", "skim", "oat milk", "almond milk", "lactose free" ]  }
+
   # Scopes
 
   def to_s
