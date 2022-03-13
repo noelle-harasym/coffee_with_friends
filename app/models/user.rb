@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :mobile_number, :presence => true
+
   validates :name, :presence => true
 
   validates :password, :presence => true
