@@ -1,90 +1,52 @@
-<!-- Form coffee_order start -->
 <%= form_with(model: @coffee_order, local: true) do |f| %>
-<!-- Form coffee_order end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for user_id start -->
   <%= f.hidden_field :user_id, value: @user.id %>
-  <!-- Input for user_id end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for coffee_type_id start -->
   <div class="form-group">
     <%= f.label :coffee_type_id %>
 
-    <!-- Input for coffee_type_id start -->
     <%= f.collection_select :coffee_type_id, CoffeeType.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for coffee_type_id end -->
   </div>
-  <!-- Label and input for coffee_type_id end -->
 
-  <!-- Label and input for modification_iced start -->
   <div class="form-check">
-    <!-- Input for modification_iced start -->
     <%= f.check_box :modification_iced, class: "form-check-input" %>
-    <!-- Input for modification_iced end -->
     <%= f.label :modification_iced, class: "form-check-label" %>
   </div>
-  <!-- Label and input for modification_iced end -->
 
-  <!-- Label and input for dairy_type_id start -->
   <div class="form-group">
     <%= f.label :dairy_type_id %>
 
-    <!-- Input for dairy_type_id start -->
     <%= f.collection_select :dairy_type_id, DairyType.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for dairy_type_id end -->
   </div>
-  <!-- Label and input for dairy_type_id end -->
 
-  <!-- Label and input for sweetness_type_id start -->
   <div class="form-group">
     <%= f.label :sweetness_type_id %>
 
-    <!-- Input for sweetness_type_id start -->
     <%= f.collection_select :sweetness_type_id, Sweetness.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for sweetness_type_id end -->
   </div>
-  <!-- Label and input for sweetness_type_id end -->
 
-  <!-- Label and input for modification_other start -->
   <div class="form-group">
     <%= f.label :modification_other %>
-    <!-- Input for modification_other start -->
     <%= f.text_area :modification_other, rows: "3", class: "form-control" %>
-    <!-- Input for modification_other end -->
   </div>
-  <!-- Label and input for modification_other end -->
 
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <%= f.label :rating %>
 
-    <!-- Input for rating start -->
     <%= f.text_field :rating, class: "form-control" %>
-    <!-- Input for rating end -->
   </div>
-  <!-- Label and input for rating end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <%= f.label :picture %>
 
-    <!-- Input for picture start -->
     <%= f.file_field :picture, class: "form-control" %>
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <%= f.label :date %>
 
-    <!-- Input for date start -->
     <%= f.date_select :date, class: "form-control" %>
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
   <%= f.submit "Create coffee order", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

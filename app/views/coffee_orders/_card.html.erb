@@ -6,67 +6,49 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @coffee_order.user.present? %>
           <%= link_to coffee_order.user, coffee_order.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Coffee type</dt>
-      <!-- Display coffee_type_id start -->
       <dd>
         <% if @coffee_order.coffee_type.present? %>
           <%= link_to coffee_order.coffee_type, coffee_order.coffee_type %>
         <% end %>
       </dd>
-      <!-- Display coffee_type_id end -->
 
       <dt>Modification iced</dt>
-      <!-- Display modification_iced start -->
       <dd><%= coffee_order.modification_iced %></dd>
-      <!-- Display modification_iced end -->
 
       <dt>Dairy type</dt>
-      <!-- Display dairy_type_id start -->
       <dd>
         <% if @coffee_order.dairy_type.present? %>
           <%= link_to coffee_order.dairy_type, coffee_order.dairy_type %>
         <% end %>
       </dd>
-      <!-- Display dairy_type_id end -->
 
       <dt>Sweetness type</dt>
-      <!-- Display sweetness_type_id start -->
       <dd>
         <% if @coffee_order.sweetness_type.present? %>
           <%= link_to coffee_order.sweetness_type, coffee_order.sweetness_type %>
         <% end %>
       </dd>
-      <!-- Display sweetness_type_id end -->
 
       <dt>Modification other</dt>
-      <!-- Display modification_other start -->
       <dd><%= coffee_order.modification_other %></dd>
-      <!-- Display modification_other end -->
 
       <dt>Rating</dt>
-      <!-- Display rating start -->
       <dd><%= coffee_order.rating %></dd>
-      <!-- Display rating end -->
 
       <dt>Picture</dt>
-      <!-- Display picture start -->
       <dd>
         <%= cl_image_tag @coffee_order.picture, class: "img-fluid" %>
       </dd>
-      <!-- Display picture end -->
 
       <dt>Date</dt>
-      <!-- Display date start -->
       <dd><%= coffee_order.date %></dd>
-      <!-- Display date end -->
 
     </dl>
 
@@ -75,21 +57,17 @@
         <%= link_to_show_or_back coffee_order, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link coffee_order start -->
       <div class="col">
         <%= link_to edit_coffee_order_url(coffee_order), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link coffee_order end -->
 
-      <!-- Delete link coffee_order start -->
       <div class="col">
         <%= link_to coffee_order, method: :delete, data: { confirm: "Do you really want to delete this coffee_order?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link coffee_order end -->
     </div>
   </div>
 
