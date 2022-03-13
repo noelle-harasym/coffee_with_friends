@@ -14,6 +14,8 @@ class CoffeeOrderResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :dairy_type
+
   belongs_to :coffee_type
 
   belongs_to :user
