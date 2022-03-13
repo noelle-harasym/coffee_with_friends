@@ -12,5 +12,7 @@ RSpec.describe Sweetness, type: :model do
 
     describe "Validations" do
 
+    it { should validate_inclusion_of(:sweetness_type).in_array([ "full", "half", "quarter" ]) }
+
     end
 end

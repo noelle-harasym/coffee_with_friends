@@ -5,6 +5,8 @@ class Sweetness < ApplicationRecord
 
   # Validations
 
+  validates :sweetness_type, :inclusion => { :in => [ "full", "half", "quarter" ]  }
+
   # Scopes
 
   def to_s
