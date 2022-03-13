@@ -14,7 +14,7 @@
     <% end %>
 
     <%= f.label :sweetness_type %>
-    <%= f.number_field :sweetness_type, class: sweetness_type_class, placeholder: "Enter sweetness type" %>
+    <%= f.text_field :sweetness_type, class: sweetness_type_class, placeholder: "Enter sweetness type" %>
     <% if sweetness_type_was_invalid %>
       <% sweetness.errors.full_messages_for(:sweetness_type).each do |message| %>
         <div class="invalid-feedback d-flex">
