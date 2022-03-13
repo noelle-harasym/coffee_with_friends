@@ -29,13 +29,6 @@
         <% end %>
       </dd>
 
-      <dt>Sweetness type</dt>
-      <dd>
-        <% if @coffee_order.sweetness_type.present? %>
-          <%= link_to coffee_order.sweetness_type, coffee_order.sweetness_type %>
-        <% end %>
-      </dd>
-
       <dt>Modification other</dt>
       <dd><%= coffee_order.modification_other %></dd>
 

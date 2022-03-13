@@ -91,28 +91,6 @@
     <% end %>
   </div>
   <div class="form-group">
-    <% sweetness_type_class = "form-control" %>
-    <% sweetness_type_was_invalid = coffee_order.errors.include?(:sweetness_type) %>
-
-    <% if was_validated %>
-      <% if sweetness_type_was_invalid %>
-        <% sweetness_type_class << " is-invalid" %>
-      <% else %>
-        <% sweetness_type_class << " is-valid" %>
-      <% end %>
-    <% end %>
-
-    <%= f.label :sweetness_type_id %>
-    <%= f.collection_select :sweetness_type_id, Sweetness.all, :id, :to_s, {}, class: "form-control" %>
-    <% if sweetness_type_was_invalid %>
-      <% coffee_order.errors.full_messages_for(:sweetness_type).each do |message| %>
-        <div class="invalid-feedback d-flex">
-          <%= message %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="form-group">
     <% modification_other_class = "form-control" %>
     <% modification_other_was_invalid = coffee_order.errors.include?(:modification_other) %>
 

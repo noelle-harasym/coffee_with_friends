@@ -20,12 +20,6 @@
   <%= f.hidden_field :dairy_type_id, value: @dairy_type.id %>
 
   <div class="form-group">
-    <%= f.label :sweetness_type_id %>
-
-    <%= f.collection_select :sweetness_type_id, Sweetness.all, :id, :to_s, {}, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
     <%= f.label :modification_other %>
     <%= f.text_area :modification_other, rows: "3", class: "form-control" %>
   </div>
