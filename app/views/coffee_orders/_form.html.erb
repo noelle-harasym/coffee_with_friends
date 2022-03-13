@@ -119,7 +119,7 @@
 
     <%= f.label :sweetness_type_id %>
     <!-- Input for sweetness_type_id start -->
-    <%= f.number_field :sweetness_type_id, class: sweetness_type_class, placeholder: "Enter sweetness type" %>
+    <%= f.collection_select :sweetness_type_id, Sweetness.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for sweetness_type_id end -->
     <% if sweetness_type_was_invalid %>
       <% coffee_order.errors.full_messages_for(:sweetness_type).each do |message| %>

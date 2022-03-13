@@ -42,7 +42,7 @@
     <%= f.label :sweetness_type_id %>
 
     <!-- Input for sweetness_type_id start -->
-    <%= f.text_field :sweetness_type_id, class: "form-control" %>
+    <%= f.collection_select :sweetness_type_id, Sweetness.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for sweetness_type_id end -->
   </div>
   <!-- Label and input for sweetness_type_id end -->
