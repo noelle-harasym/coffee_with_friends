@@ -3,7 +3,8 @@ class SweetnessesController < ApplicationController
 
   # GET /sweetnesses
   def index
-    @sweetnesses = Sweetness.page(params[:page]).per(10)
+    @q = Sweetness.ransack(params[:q])
+    @sweetnesses = @q.result(:distinct => true).includes(:coffee_orders).page(params[:page]).per(10)
   end
 
   # GET /sweetnesses/1
