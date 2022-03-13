@@ -4,7 +4,7 @@ class CoffeeOrdersController < ApplicationController
   def index
     @q = CoffeeOrder.ransack(params[:q])
     @coffee_orders = @q.result(distinct: true).includes(:user, :coffee_type,
-                                                        :dairy_type, :sweetness_type).page(params[:page]).per(10)
+                                                        :dairy_type).page(params[:page]).per(10)
   end
 
   def show; end
@@ -57,6 +57,6 @@ class CoffeeOrdersController < ApplicationController
 
   def coffee_order_params
     params.require(:coffee_order).permit(:user_id, :coffee_type_id,
-                                         :modification_iced, :dairy_type_id, :sweetness_type_id, :modification_other, :rating, :picture, :date)
+                                         :modification_iced, :dairy_type_id, :modification_other, :rating, :picture, :date)
   end
 end

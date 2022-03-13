@@ -6,16 +6,12 @@ class CoffeeOrderResource < ApplicationResource
   attribute :coffee_type_id, :integer
   attribute :modification_iced, :boolean
   attribute :dairy_type_id, :integer
-  attribute :sweetness_type_id, :integer
   attribute :modification_other, :string
   attribute :rating, :integer
   attribute :picture, :string
   attribute :date, :date
 
   # Direct associations
-
-  belongs_to :sweetness_type,
-             resource: SweetnessResource
 
   belongs_to :dairy_type
 

@@ -3,9 +3,6 @@ class CoffeeOrder < ApplicationRecord
 
   # Direct associations
 
-  belongs_to :sweetness_type,
-             class_name: "Sweetness"
-
   belongs_to :dairy_type
 
   belongs_to :coffee_type
