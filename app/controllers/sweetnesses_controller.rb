@@ -1,10 +1,10 @@
 class SweetnessesController < ApplicationController
-  before_action :set_sweetness, only: [:show, :edit, :update, :destroy]
+  before_action :set_sweetness, only: %i[show edit update destroy]
 
   # GET /sweetnesses
   def index
     @q = Sweetness.ransack(params[:q])
-    @sweetnesses = @q.result(:distinct => true).includes(:coffee_orders).page(params[:page]).per(10)
+    @sweetnesses = @q.result(distinct: true).includes(:coffee_orders).page(params[:page]).per(10)
   end
 
   # GET /sweetnesses/1
@@ -18,15 +18,14 @@ class SweetnessesController < ApplicationController
   end
 
   # GET /sweetnesses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sweetnesses
   def create
     @sweetness = Sweetness.new(sweetness_params)
 
     if @sweetness.save
-      redirect_to @sweetness, notice: 'Sweetness was successfully created.'
+      redirect_to @sweetness, notice: "Sweetness was successfully created."
     else
       render :new
     end
@@ -35,7 +34,7 @@ class SweetnessesController < ApplicationController
   # PATCH/PUT /sweetnesses/1
   def update
     if @sweetness.update(sweetness_params)
-      redirect_to @sweetness, notice: 'Sweetness was successfully updated.'
+      redirect_to @sweetness, notice: "Sweetness was successfully updated."
     else
       render :edit
     end
@@ -44,17 +43,18 @@ class SweetnessesController < ApplicationController
   # DELETE /sweetnesses/1
   def destroy
     @sweetness.destroy
-    redirect_to sweetnesses_url, notice: 'Sweetness was successfully destroyed.'
+    redirect_to sweetnesses_url, notice: "Sweetness was successfully destroyed."
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sweetness
-      @sweetness = Sweetness.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def sweetness_params
-      params.require(:sweetness).permit(:sweetness_type)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sweetness
+    @sweetness = Sweetness.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def sweetness_params
+    params.require(:sweetness).permit(:sweetness_type)
+  end
 end

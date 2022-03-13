@@ -13,7 +13,7 @@ class Api::V1::SweetnessesController < Api::V1::GraphitiController
     sweetness = SweetnessResource.build(params)
 
     if sweetness.save
-      render jsonapi: sweetness, status: 201
+      render jsonapi: sweetness, status: :created
     else
       render jsonapi_errors: sweetness
     end
@@ -33,7 +33,7 @@ class Api::V1::SweetnessesController < Api::V1::GraphitiController
     sweetness = SweetnessResource.find(params)
 
     if sweetness.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: sweetness
     end

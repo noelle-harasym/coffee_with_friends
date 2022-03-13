@@ -10,5 +10,4 @@ class SweetnessResource < ApplicationResource
              foreign_key: :sweetness_type_id
 
   # Indirect associations
-
 end
