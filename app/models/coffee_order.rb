@@ -1,6 +1,8 @@
 class CoffeeOrder < ApplicationRecord
   # Direct associations
 
+  belongs_to :coffee_type
+
   belongs_to :user
 
   # Indirect associations
