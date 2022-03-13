@@ -6,6 +6,9 @@ class SweetnessResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :coffee_orders,
+             foreign_key: :sweetness_type_id
+
   # Indirect associations
 
 end
